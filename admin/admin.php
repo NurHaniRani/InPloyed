@@ -172,6 +172,7 @@ if ($resultUserImage->num_rows == 1) {
 							<div class="report-topic-heading">
 								<h3 class="t-op">Name</h3> 
 								<h3 class="t-op">Email</h3> 
+								<h3 class="t-op">Last Updated</h3> 
 							</div>
 
 							<div class="items" data-user-type="<?php echo strtolower($admin['UserType']); ?>">
@@ -179,6 +180,7 @@ if ($resultUserImage->num_rows == 1) {
 									<div class="item1">
 										<h3 class="t-op-nextlvl"><?php echo $admin['UserName']; ?></h3>
 										<h3 class="t-op-nextlvl"><?php echo $admin['UserEmail']; ?></h3>
+										<h3 class="t-op-nextlvl"><?php echo $admin['LastUpdateDate']; ?></h3>
 									</div>
 								<?php endforeach; ?>
 							</div>
