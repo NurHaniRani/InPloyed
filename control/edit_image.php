@@ -7,6 +7,8 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 require_once('../control/dbconnect.php');
+// Set the time zone to Kuala Lumpur, Malaysia
+date_default_timezone_set('Asia/Kuala_Lumpur');
 
 $userid = $_SESSION['user_id'];
 
@@ -16,12 +18,14 @@ $targetFile = $targetDirectory . basename($_FILES["newImage"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
-// Check if the image file is a actual image or fake image
+// Get the current date and time
+$currentDate = date("j F Y"); // Example: 3 January 2023
+$currentTime = date("g:i a"); // Example: 3:00 pm
+
+// Check if the image file is a real image
 if (isset($_POST["submit"])) {
     $check = getimagesize($_FILES["newImage"]["tmp_name"]);
-    if ($check !== false) {
-        $uploadOk = 1;
-    } else {
+    if ($check === false) {
         echo "<script>alert('Sorry, file is not an image.'); window.location.href='../admin/profile.php';</script>";
         $uploadOk = 0;
     }
@@ -49,41 +53,26 @@ if ($uploadOk == 0) {
         $imageData = file_get_contents($targetFile);
         $imageData = mysqli_real_escape_string($conn, $imageData);
 
-        // Check if the user already has an image in the database
-        $sqlCheckImage = "SELECT * FROM user_image WHERE UserID = '$userid'";
-        $resultCheckImage = $conn->query($sqlCheckImage);
+        // Update the user image data
+        $sqlUpdateImage = "UPDATE user_image 
+                          SET img_name = '$targetFile', img_type = '$imageFileType', 
+                              img_size = '" . $_FILES["newImage"]["size"] . "', img_data = '$imageData'
+                          WHERE UserID = '$userid'";
+        $resultUpdateImage = $conn->query($sqlUpdateImage);
 
-        if ($resultCheckImage->num_rows > 0) {
-            // User already has an image, perform an UPDATE operation
-            $sqlUpdateImage = "UPDATE user_image 
-                               SET img_name = '$targetFile', img_type = '$imageFileType', 
-                                   img_size = '" . $_FILES["newImage"]["size"] . "', img_data = '$imageData'
-                               WHERE UserID = '$userid'";
-            $resultUpdateImage = $conn->query($sqlUpdateImage);
+        // Update the LastUpdateDate and LastUpdateTime
+        $sqlUpdateUser = "UPDATE user 
+                          SET LastUpdateDate = '$currentDate', LastUpdateTime = '$currentTime'
+                          WHERE UserID = '$userid'";
+        $resultUpdateUser = $conn->query($sqlUpdateUser);
 
-            if ($resultUpdateImage) {
-                // Image data updated successfully
-                echo "<script>alert('Image Updated Successfully!'); window.location.href='../admin/profile.php';</script>";
-                exit();
-            } else {
-                // Handle the case when the update fails
-                echo "Error updating image data: " . $conn->error;
-            }
+        if ($resultUpdateImage && $resultUpdateUser) {
+            // Image data and user data updated successfully
+            echo "<script>alert('Image Updated Successfully!'); window.location.href='../admin/profile.php';</script>";
+            exit();
         } else {
-            // User does not have an image, perform an INSERT operation
-            $imgId = uniqid();
-            $sqlInsertImage = "INSERT INTO user_image (img_id, img_name, img_type, img_size, img_data, UserID) 
-                                VALUES ('$imgId', '$targetFile', '$imageFileType', '" . $_FILES["newImage"]["size"] . "', '$imageData', '$userid')";
-            $resultInsertImage = $conn->query($sqlInsertImage);
-
-            if ($resultInsertImage) {
-                // Image data inserted successfully
-                echo "<script>alert('Image Updated Successfully!'); window.location.href='../admin/profile.php';</script>";
-                exit();
-            } else {
-                // Handle the case when the insert fails
-                echo "Error inserting image data: " . $conn->error;
-            }
+            // Handle the case when the update fails
+            echo "Error updating image and user data: " . $conn->error;
         }
     } else {
         echo "<script>alert('Sorry, there was an error uploading your file.'); window.location.href='../admin/profile.php';</script>";
