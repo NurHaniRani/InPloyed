@@ -238,7 +238,8 @@ $conn->close();
 					<div class="report-topic-heading"> 
 						<h3 class="t-op">Name</h3> 
 						<h3 class="t-op">Email</h3> 
-						<h3 class="t-op">Type</h3> 
+						<h3 class="t-op">Type</h3>
+						<h3 class="t-op">Last Active</h3>
 						<h3 class="t-op">Action</h3>
 					</div> 
 
@@ -248,6 +249,7 @@ $conn->close();
 							<h3 class="t-op-nextlvl"><?php echo $user['UserName']; ?></h3> 
 							<h3 class="t-op-nextlvl"><?php echo $user['UserEmail']; ?></h3> 
 							<h3 class="t-op-nextlvl"><?php echo $user['UserType']; ?></h3> 
+							<h3 class="t-op-nextlvl"><?php echo $user['LastAccessDate']; ?></h3> 
 							<?php if ($user['UserStatus'] == 'Active'): ?>
 								<button class="t-op-nextlvl label-tag disable-btn" data-user-id="<?php echo $user['UserID'];?>" style="background-color: red;">Disable</button>
 							<?php else: ?>
