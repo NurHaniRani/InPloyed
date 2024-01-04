@@ -3,6 +3,14 @@
 
 require_once('../control/dbconnect.php');
 
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+    exit();
+}
+
+
 // Get the forum ID from the AJAX request
 $forumId = isset($_GET['forumId']) ? intval($_GET['forumId']) : 0;
 
