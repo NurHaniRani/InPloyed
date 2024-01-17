@@ -86,7 +86,7 @@ $sqlRejectedApplicants = "SELECT
                                 DATE_FORMAT(STR_TO_DATE(ApplyStartDate, '%d %M %Y'), '%Y-%m') AS month,
                                 COUNT(*) AS rejectedCount
                             FROM job_apply 
-                            WHERE ApplyStatus = 'Rejected'
+                            WHERE ApplyStatus = 'Failed'
                             GROUP BY month";
 
 $resultRejectedApplicants = $conn->query($sqlRejectedApplicants);
