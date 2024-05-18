@@ -7,19 +7,9 @@ padding: 0;
 box-sizing: border-box; 
 font-family: "Poppins", sans-serif; 
 } 
-:root { 
---background-color1: #fafaff; 
---background-color2: #ffffff; 
---background-color3: #ededed; 
---background-color4: #cad7fda4; 
---primary-color: #4b49ac; 
---secondary-color: #0c007d; 
---Border-color: #3f0097; 
---one-use-color: #3f0097; 
---two-use-color: #5500cb; 
-} 
+
 body { 
-background-color: var(--background-color4); 
+background-color: #0C2134;
 max-width: 100%; 
 overflow-x: hidden; 
 } 
@@ -28,7 +18,7 @@ header {
 height: 70px; 
 width: 100vw; 
 padding: 0 30px; 
-background-color: var(--background-color1); 
+background-color: #0097B2; 
 position: fixed; 
 z-index: 100; 
 box-shadow: 1px 1px 15px rgba(161, 182, 253, 0.825); 
@@ -67,26 +57,6 @@ display: none;
 gap: 60px; 
 } 
 
-.searchbar input { 
-width: 250px; 
-height: 42px; 
-border-radius: 50px 0 0 50px; 
-background-color: var(--background-color3); 
-padding: 0 20px; 
-font-size: 15px; 
-outline: none; 
-border: none; 
-} 
-.searchbtn { 
-width: 50px; 
-height: 42px; 
-display: flex; 
-align-items: center; 
-justify-content: center; 
-border-radius: 0px 50px 50px 0px; 
-background-color: var(--secondary-color); 
-cursor: pointer; 
-} 
 
 .message { 
 gap: 40px; 
@@ -104,6 +74,7 @@ align-items: center;
 justify-content: center; 
 overflow: hidden; 
 } 
+
 .main-container { 
 display: flex; 
 width: 100vw; 
@@ -147,7 +118,7 @@ gap: 50px;
 .nav { 
 min-height: 91vh; 
 width: 260px; 
-background-color: var(--background-color2); 
+background-color: #0B3B7B;
 position: absolute; 
 top: 0px; 
 left: 00; 
@@ -229,16 +200,16 @@ transform: scale(1.08);
 } 
 
 .box:nth-child(1) { 
-background: linear-gradient(#f99777, #623aa2);
+background-color: #0CA437;
 } 
 .box:nth-child(2) { 
-background: linear-gradient(#f99777, #623aa2);
+background-color: #0CA437;
 } 
 .box:nth-child(3) { 
-background: linear-gradient(#f99777, #623aa2);
+background-color: #0CA437;
 } 
 .box:nth-child(4) { 
-background: linear-gradient(#f99777, #623aa2);
+background-color: #0CA437;
 } 
 
 .box img { 
@@ -280,14 +251,14 @@ border-bottom: 2px solid rgba(0, 20, 151, 0.59);
 .recent-Articles { 
 font-size: 30px; 
 font-weight: 600; 
-color: #5500cb; 
+color: #093B7B; 
 } 
 
 .view { 
 height: 35px; 
 width: 100px; 
 border-radius: 8px; 
-background: linear-gradient(#f99777, #623aa2);
+ background: linear-gradient(#0CA437, #0CA437);
 color: white; 
 font-size: 15px; 
 border: none; 
