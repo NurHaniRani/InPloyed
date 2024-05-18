@@ -38,16 +38,16 @@ if ($resultUserImage->num_rows == 1) {
 <html lang="en"> 
 
 <head> 
-	<link rel="icon" href="../src/inployed.png">
+	<link rel="icon" href="../src/logoSnipped.png">
 	<meta charset="UTF-8"> 
 	<meta http-equiv="X-UA-Compatible"
 		content="IE=edge"> 
 	<meta name="viewport"
 		content="width=device-width, 
 				initial-scale=1.0"> 
-	<title>InPloyed | Profile</title> 
+	<title>Profile | CareerConnect</title> 
 	<link rel="stylesheet"
-		href="../css/profile.css"> 
+		href="../css/profile2.css"> 
 	<link rel="stylesheet"
 		href="responsive.css"> 
 
@@ -56,15 +56,63 @@ if ($resultUserImage->num_rows == 1) {
 <body> 
 	
 	<header> 
+		<div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    		<div class="navcontainer1"> 
+			<nav class="navi"> 
+				<div class="nav-upper-options"> 
+
+					<a href="dashboard.php" style="color: white; text-decoration: none;">
+					<div class="nav-option option1"> 
+						<h3> Dashboard</h3> 
+					</div></a>
+
+					<a href="forum.php" style="color: white; text-decoration: none;">
+					<div class="option2 nav-option"> 
+						<h3>Forum</h3> 
+					</div> </a>
+
+					<a href="forumpost.php" style="color: white; text-decoration: none;">
+					<div class="nav-option option3"> 
+						<h3>Forum Posts</h3> 
+					</div></a>
+
+					<a href="user.php" style="color: white; text-decoration: none;">
+					<div class="nav-option option4"> 
+						<h3>Users</h3> 
+					</div></a>
+
+					<div class="nav-option option5"> 
+						<h3 style="color: white;"> Profile</h3> 
+					</div>
+
+					<a href="admin.php" style="color: white; text-decoration: none;">
+					<div class="nav-option option6"> 
+						<h3>Admin</h3> 
+					</div> </a>
+
+					<a href="#" onclick="confirmLogout()" style="color: white; text-decoration: none;">
+						<div class="nav-option logout"> 
+							<h3>Logout</h3> 
+						</div>
+					</a>
+
+				</div> 
+			</nav> 
+		</div> 
 
 		<a href="dashboard.php">
 			<div class="logosec"> 
-				<div class="logo"><img src="../src/logo.png" style="margin-left: -5px;"></div> 
+				<div class="logo"><img src="../src/logo2Final.png"></div> 
 			</div> 
 		</a>
 
 		<div class="message"> 
-			<a href="#" onclick="confirmLogout()" style="color: black; text-decoration: none; margin-left: 10px;">Log Out</a>
+			<a href="#" onclick="confirmLogout()" style="color: black; text-decoration: none;">Log Out</a>
 			<div class="dp"> 
 			<?php if (!empty($userImageData['img_data'])) : ?>
                     <!-- Convert BLOB data to base64 and embed it directly in the src attribute -->
@@ -82,62 +130,37 @@ if ($resultUserImage->num_rows == 1) {
 			<nav class="nav"> 
 				<div class="nav-upper-options"> 
 
-					<a href="dashboard.php" style="color: black; text-decoration: none;">
+					<a href="dashboard.php" style="color: white; text-decoration: none;">
 					<div class="nav-option option1"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
-							class="nav-img"
-							alt="dashboard"> 
 						<h3> Dashboard</h3> 
 					</div></a>
 
-					<a href="forum.php" style="color: black; text-decoration: none;">
+					<a href="forum.php" style="color: white; text-decoration: none;">
 					<div class="option2 nav-option"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png"
-							class="nav-img"
-							alt="articles"> 
 						<h3>Forum</h3> 
 					</div> </a>
 
-					<a href="forumpost.php" style="color: black; text-decoration: none;">
+					<a href="forumpost.php" style="color: white; text-decoration: none;">
 					<div class="nav-option option3"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png"
-							class="nav-img"
-							alt="report"> 
 						<h3>Forum Posts</h3> 
 					</div></a>
 
-					<a href="user.php" style="color: black; text-decoration: none;">
+					<a href="user.php" style="color: white; text-decoration: none;">
 					<div class="nav-option option4"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
-							class="nav-img"
-							alt="institution"> 
 						<h3>Users</h3> 
 					</div></a>
 
 					<div class="nav-option option5"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
-							class="nav-img"
-							alt="blog"> 
-						<h3> Profile</h3> 
+						<h3 style="color: white;"> Profile</h3> 
 					</div>
 
-					<a href="admin.php" style="color: black; text-decoration: none;">
+					<a href="admin.php" style="color: white; text-decoration: none;">
 					<div class="nav-option option6"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png"
-							class="nav-img"
-							alt="settings"> 
 						<h3>Admin</h3> 
 					</div> </a>
 
-					<a href="#" onclick="confirmLogout()" style="color: black; text-decoration: none;">
+					<a href="#" onclick="confirmLogout()" style="color: white; text-decoration: none;">
 						<div class="nav-option logout"> 
-							<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img" alt="logout"> 
 							<h3>Logout</h3> 
 						</div>
 					</a>
@@ -149,7 +172,7 @@ if ($resultUserImage->num_rows == 1) {
 
 			<div class="report-container"> 
 				<div class="report-header"> 
-					<h1 class="recent-Articles">Admin Profile</h1> 
+					<h1 class="recent-Articles">Profile</h1> 
 				</div> 
 
 				<div class="report-body"> 
@@ -167,7 +190,7 @@ if ($resultUserImage->num_rows == 1) {
                 <div class="user-info">
                     <h3 class="t-op" style="font-size: 28px;"><?php echo $userInfo['UserName']; ?></h3>
                     <h3 class="t-op">Administrator</h3>
-                    <h3 class="t-op" style="color: blue;"><?php echo $userInfo['UserEmail']; ?></h3>
+                    <h3 class="t-op" style="color: green;"><?php echo $userInfo['UserEmail']; ?></h3>
                 </div>
             </div>
 					</div> 
@@ -175,7 +198,7 @@ if ($resultUserImage->num_rows == 1) {
 
 			<div class="report-container edit-profile-container"> 
 				<div class="report-header"> 
-					<h1 class="recent-Articles">Edit Profile</h1> 
+					<h1 class="recent-Articles">Edit</h1> 
 					<button class="view" id="nameBtn">Name</button>
 					<button class="view" id="passwordBtn">Password</button>
 					<button class="view" id="imageBtn">Image</button>
@@ -217,8 +240,15 @@ if ($resultUserImage->num_rows == 1) {
 			</div> 
 		</div> 
 	</div> 
+	<script>
+		document.getElementById('mobile-menu').addEventListener('click', function() {
+    console.log('Mobile menu clicked'); // Check if this message appears in the console
+    document.querySelector('.nav').classList.toggle('active');
+    document.querySelector('.navcontainer').classList.toggle('active');
+});
 
-	<script src="./index.js"></script>
+	</script>
+
 <script>
     // Add event listener for the image click
     document.getElementById('userImage').addEventListener('click', function () {
