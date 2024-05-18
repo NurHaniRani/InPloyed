@@ -82,7 +82,7 @@ $conn->close();
 				initial-scale=1.0"> 
 	<title>Users | CareerConnect</title> 
 	<link rel="stylesheet"
-		href="../css/user2.css"> 
+		href="../css/user.css"> 
 	<link rel="stylesheet"
 		href="responsive.css"> 
 </head> 
