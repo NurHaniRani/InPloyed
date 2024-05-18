@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+::selection {
+  color: #000;
+  background: #fff;
+}
+
+body {
+  background: #0C2134;
+}
+
+.img {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(#0C2134, #0C2134);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-content {
+  text-align: center;
+  color: #fff;
+}
+
+.logo {
+  margin-bottom: 10px;
+}
+
+.logo img {
+  width: 100%;
+  max-width: 300px; /* Increased size for larger logo */
+}
+
+.left .title {
+  font-size: 55px;
+  font-weight: 600;
+}
+
+.left .title .career {
+  color: grey;
+}
+
+.left .title .connect {
+  color: #0097B2;
+}
+
+.left .sub_title {
+  color: #0097B2;
+  font-size: 52px;
+  font-weight: 600;
+  margin-top: 10px; /* Decreased the gap */
+}
+
+.left .btns {
+  margin-top: 20px;
+}
+
+.left .btns button {
+  height: 55px;
+  width: 170px;
+  border-radius: 5px;
+  border: none;
+  margin: 0 10px;
+  border: 2px solid #0CA437;
+  background-color: #0CA437;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 10px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.left .btns button:hover {
+  background: #0097B2;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .left .title, .left .sub_title {
+    font-size: 36px;
+  }
+
+  .left .btns button {
+    height: 45px;
+    width: 140px;
+    font-size: 16px;
+  }
+
+  .logo img {
+    max-width: 250px; /* Adjusted for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .left .title, .left .sub_title {
+    font-size: 28px;
+  }
+
+  .left .btns button {
+    height: 40px;
+    width: 120px;
+    font-size: 14px;
+  }
+
+  .logo img {
+    max-width: 200px; /* Adjusted for smallest screens */
+  }
+}
