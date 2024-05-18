@@ -77,7 +77,7 @@ $conn->close();
 				initial-scale=1.0"> 
 	<title>Forum | CareerConnect</title> 
 	<link rel="stylesheet"
-		href="../css/forum2.css"> 
+		href="../css/forum.css"> 
 	<link rel="stylesheet"
 		href="responsive.css"> 
 </head> 
