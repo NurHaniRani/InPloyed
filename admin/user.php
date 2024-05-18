@@ -73,16 +73,16 @@ $conn->close();
 <html lang="en"> 
 
 <head> 
-	<link rel="icon" href="../src/inployed.png">
+	<link rel="icon" href="../src/logoSnipped.png">
 	<meta charset="UTF-8"> 
 	<meta http-equiv="X-UA-Compatible"
 		content="IE=edge"> 
 	<meta name="viewport"
 		content="width=device-width, 
 				initial-scale=1.0"> 
-	<title>InPloyed | User</title> 
+	<title>Users | CareerConnect</title> 
 	<link rel="stylesheet"
-		href="../css/user.css"> 
+		href="../css/user2.css"> 
 	<link rel="stylesheet"
 		href="responsive.css"> 
 </head> 
@@ -93,7 +93,7 @@ $conn->close();
 
 		<a href="dashboard.php">
 			<div class="logosec"> 
-				<div class="logo"><img src="../src/logo.png" style="margin-left: -5px;"></div> 
+				<div class="logo"><img src="../src/logo2Final.png"></div> 
 			</div> 
 		</a>
 
@@ -116,63 +116,38 @@ $conn->close();
 			<nav class="nav"> 
 				<div class="nav-upper-options"> 
 
-					<a href="dashboard.php" style="color: black; text-decoration: none;">
+					<a href="dashboard.php" style="color: white; text-decoration: none;">
 					<div class="nav-option option1"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
-							class="nav-img"
-							alt="dashboard"> 
 						<h3> Dashboard</h3> 
 					</div> </a>
 
-					<a href="forum.php" style="color: black; text-decoration: none;">
+					<a href="forum.php" style="color: white; text-decoration: none;">
 					<div class="option2 nav-option"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png"
-							class="nav-img"
-							alt="articles"> 
 						<h3>Forum</h3> 
 					</div> 
 				</a>
 
-				<a href="forumpost.php" style="color: black; text-decoration: none;">
+				<a href="forumpost.php" style="color: white; text-decoration: none;">
 					<div class="nav-option option3"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png"
-							class="nav-img"
-							alt="report"> 
 						<h3>Forum Posts</h3> 
 					</div> </a>
 
 					<div class="nav-option option4"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
-							class="nav-img"
-							alt="institution"> 
-						<h3>Users</h3> 
+						<h3 style="color: white;">Users</h3> 
 					</div> 
 
-					<a href="profile.php" style="color: black; text-decoration: none;">
+					<a href="profile.php" style="color: white; text-decoration: none;">
 					<div class="nav-option option5"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
-							class="nav-img"
-							alt="blog"> 
 						<h3> Profile</h3> 
 					</div> </a>
 
-					<a href="admin.php" style="color: black; text-decoration: none;">
+					<a href="admin.php" style="color: white; text-decoration: none;">
 					<div class="nav-option option6"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png"
-							class="nav-img"
-							alt="report"> 
 						<h3>Admin</h3> 
 					</div> </a>
 
-					<a href="#" onclick="confirmLogout()" style="color: black; text-decoration: none;">
+					<a href="#" onclick="confirmLogout()" style="color: white; text-decoration: none;">
 						<div class="nav-option logout"> 
-							<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img" alt="logout"> 
 							<h3>Logout</h3> 
 						</div>
 					</a>
@@ -188,10 +163,6 @@ $conn->close();
 					id=""
 					placeholder="Search"> 
 				<div class="searchbtn"> 
-				<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
-						class="icn srchicn"
-						alt="search-button"> 
 				</div> 
 			</div> 
 
@@ -226,39 +197,36 @@ $conn->close();
 			</div> 
 
 			<div class="report-container"> 
-				<div class="report-header"> 
-					<h1 class="recent-Articles">List of Users</h1> 
-					<button class="view" data-user-type="all">View All</button>
-					<button class="view" data-user-type="company">Company</button> 
-					<button class="view" data-user-type="job seeker">JobSeekers</button>
-					<button class="view" data-user-type="admin">Admin</button> 
-				</div> 
+				<div class="report-header">
+    <h1 class="recent-Articles">Users</h1>
+    <div class="view-buttons">
+        <button class="view" data-user-type="all">All</button>
+        <button class="view" data-user-type="company">Company</button>
+        <button class="view" data-user-type="job seeker">Job Seekers</button>
+        <button class="view" data-user-type="admin">Admin</button>
+    </div>
+</div>
 
-				<div class="report-body"> 
-					<div class="report-topic-heading"> 
-						<h3 class="t-op">Name</h3> 
-						<h3 class="t-op">Email</h3> 
-						<h3 class="t-op">Type</h3>
-						<h3 class="t-op">Last Active</h3>
-						<h3 class="t-op">Action</h3>
-					</div> 
+				<div class="report-body">
+    <div class="items">
+        <?php foreach ($users as $user): ?>
+        <div class="item1" data-user-type="<?php echo strtolower($user['UserType']); ?>">
+            <div class="user-info">
+                <h3 class="t-op-nextlvl" style="font-weight: bold;">Name: <?php echo $user['UserName']; ?></h3>
+                <h3 class="t-op-nextlvl">Email: <?php echo $user['UserEmail']; ?></h3>
+                <h3 class="t-op-nextlvl">UserType: <?php echo $user['UserType']; ?></h3>
+                <h3 class="t-op-nextlvl">Last Access Date: <?php echo $user['LastAccessDate']; ?></h3>
+            </div>
+            <?php if ($user['UserStatus'] == 'Active'): ?>
+                <button class="t-op-nextlvl label-tag disable-btn" data-user-id="<?php echo $user['UserID'];?>" style="background-color: red;">Disable</button>
+            <?php else: ?>
+                <button class="t-op-nextlvl label-tag enable-btn" data-user-id="<?php echo $user['UserID']; ?>" style="background-color: green;">Enable</button>
+            <?php endif; ?>						
+        </div>
+        <?php endforeach; ?>
+    </div>
+</div>
 
-					<div class="items"> 
-						<?php foreach ($users as $user): ?>
-						<div class="item1" data-user-type="<?php echo strtolower($user['UserType']); ?>"> 
-							<h3 class="t-op-nextlvl"><?php echo $user['UserName']; ?></h3> 
-							<h3 class="t-op-nextlvl"><?php echo $user['UserEmail']; ?></h3> 
-							<h3 class="t-op-nextlvl"><?php echo $user['UserType']; ?></h3> 
-							<h3 class="t-op-nextlvl"><?php echo $user['LastAccessDate']; ?></h3> 
-							<?php if ($user['UserStatus'] == 'Active'): ?>
-								<button class="t-op-nextlvl label-tag disable-btn" data-user-id="<?php echo $user['UserID'];?>" style="background-color: red;">Disable</button>
-							<?php else: ?>
-								<button class="t-op-nextlvl label-tag enable-btn" data-user-id="<?php echo $user['UserID']; ?>" style="background-color: green;">Enable</button>
-							<?php endif; ?>						
-						</div> 
-						 <?php endforeach; ?>
-					</div> 
-				</div> 
 			</div> 
 		</div> 
 	</div> 
