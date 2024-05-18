@@ -134,7 +134,7 @@ if ($resultUserImage->num_rows == 1) {
 				initial-scale=1.0"> 
 	<title>Dashboard | CareerConnect</title> 
 	<link rel="stylesheet"
-		href="../css/dashboard2.css"> 
+		href="../css/dashboard.css"> 
 	<link rel="stylesheet"
 		href="responsive.css"> 
 
