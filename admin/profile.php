@@ -47,7 +47,7 @@ if ($resultUserImage->num_rows == 1) {
 				initial-scale=1.0"> 
 	<title>Profile | CareerConnect</title> 
 	<link rel="stylesheet"
-		href="../css/profile2.css"> 
+		href="../css/profile.css"> 
 	<link rel="stylesheet"
 		href="responsive.css"> 
 
