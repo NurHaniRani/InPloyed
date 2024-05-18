@@ -7,19 +7,9 @@ padding: 0;
 box-sizing: border-box; 
 font-family: "Poppins", sans-serif; 
 } 
-:root { 
---background-color1: #fafaff; 
---background-color2: #ffffff; 
---background-color3: #ededed; 
---background-color4: #cad7fda4; 
---primary-color: #4b49ac; 
---secondary-color: #0c007d; 
---Border-color: #3f0097; 
---one-use-color: #3f0097; 
---two-use-color: #5500cb; 
-} 
+ 
 body { 
-background-color: var(--background-color4); 
+background-color: #0C2134;
 max-width: 100%; 
 overflow-x: hidden; 
 } 
@@ -28,7 +18,7 @@ header {
 height: 70px; 
 width: 100vw; 
 padding: 0 30px; 
-background-color: var(--background-color1); 
+background-color: #0097B2; 
 position: fixed; 
 z-index: 100; 
 box-shadow: 1px 1px 15px rgba(161, 182, 253, 0.825); 
@@ -152,7 +142,7 @@ gap: 50px;
 .nav { 
 min-height: 91vh; 
 width: 260px; 
-background-color: var(--background-color2); 
+background-color: #0B3B7B; 
 position: absolute; 
 top: 0px; 
 left: 00; 
@@ -228,16 +218,16 @@ transform: scale(1.08);
 } 
 
 .box:nth-child(1) { 
-background: linear-gradient(#f99777, #623aa2);
+background-color: #0CA437;
 } 
 .box:nth-child(2) { 
-background: linear-gradient(#f99777, #623aa2);
+background-color: #0CA437;
 } 
 .box:nth-child(3) { 
-background: linear-gradient(#f99777, #623aa2);
+background-color: #0CA437;
 } 
 .box:nth-child(4) { 
-background: linear-gradient(#f99777, #623aa2);
+background-color: #0CA437;
 } 
 
 .box img { 
@@ -260,7 +250,7 @@ letter-spacing: 3px;
 .report-container { 
 min-height: 300px; 
 max-width: 1200px; 
-margin: 70px auto 0px auto; 
+margin: 0 auto; 
 background-color: #ffffff; 
 border-radius: 30px; 
 box-shadow: 3px 3px 10px rgb(188, 188, 188); 
@@ -279,54 +269,99 @@ border-bottom: 2px solid rgba(0, 20, 151, 0.59);
 .recent-Articles { 
 font-size: 30px; 
 font-weight: 600; 
-color: #5500cb; 
+color: #0097B2; 
+margin-right: 20px;
 } 
 
-.view { 
-height: 35px; 
-width: 100px; 
-border-radius: 8px; 
-background: linear-gradient(#f99777, #623aa2);
-color: white; 
-font-size: 15px; 
-border: none; 
-cursor: pointer; 
-} 
+.view-buttons {
+    display: flex;
+    gap: 10px; /* Add spacing between buttons */
+}
 
-.report-body { 
-max-width: 1160px; 
-overflow-x: auto; 
-padding: 20px; 
-} 
-.report-topic-heading, 
-.item1 { 
-width: 1120px; 
-display: flex; 
-justify-content: space-between; 
-align-items: center; 
-} 
-.t-op { 
-font-size: 18px; 
-letter-spacing: 0px; 
-} 
+.view {
+    height: 30px; /* Reduce button height */
+    padding: 0 10px; /* Adjust button padding */
+    border-radius: 5px; /* Add border radius */
+    background: linear-gradient(#0CA437, #0CA437);
+    color: white;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
 
-.items { 
-width: 1120px; 
-margin-top: 15px; 
-} 
 
-.item1 { 
-margin-top: 20px; 
-} 
-.t-op-nextlvl { 
-font-size: 14px; 
-letter-spacing: 0px; 
-font-weight: 600; 
-} 
+.report-body {
+    max-width: 1160px;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.report-topic-heading,
+.item1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc; /* Add border between each user item */
+    padding-bottom: 10px; /* Add padding bottom to separate each user item */
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column; /* Align user information vertically */
+}
+
+.t-op {
+    font-size: 18px;
+    letter-spacing: 0px;
+    font-weight: 600;
+}
+
+.t-op-nextlvl {
+    font-size: 14px;
+    letter-spacing: 0px;
+    font-weight: 600;
+}
 
 .label-tag { 
 width: 100px; 
 text-align: center; 
 color: white; 
 border-radius: 4px; 
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+    .main {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .report-container {
+        max-width: 100%; /* Set maximum width to 100% for mobile devices */
+        padding: 0 20px; /* Add padding to the container on smaller screens */
+    }
+
+
+    .t-op,
+    .t-op-nextlvl {
+        font-size: 14px; /* Decrease font size for smaller screens */
+    }
+
+    .view-buttons {
+    display: flex;
+    gap: 10px; /* Add spacing between buttons */
+}
+
+.view {
+    height: 30px; /* Set fixed height for buttons */
+    min-width: 50px; /* Set minimum width for buttons */
+    padding: 0 10px; /* Adjust button padding */
+    border-radius: 5px; /* Add border radius */
+    background: linear-gradient(#0CA437, #0CA437);
+    color: white;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+
 }
