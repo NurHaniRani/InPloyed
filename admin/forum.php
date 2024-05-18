@@ -68,16 +68,16 @@ $conn->close();
 <html lang="en"> 
 
 <head> 
-	<link rel="icon" href="../src/inployed.png">
+	<link rel="icon" href="../src/logoSnipped.png">
 	<meta charset="UTF-8"> 
 	<meta http-equiv="X-UA-Compatible"
 		content="IE=edge"> 
 	<meta name="viewport"
 		content="width=device-width, 
 				initial-scale=1.0"> 
-	<title>InPloyed | Forum</title> 
+	<title>Forum | CareerConnect</title> 
 	<link rel="stylesheet"
-		href="../css/forum.css"> 
+		href="../css/forum2.css"> 
 	<link rel="stylesheet"
 		href="responsive.css"> 
 </head> 
@@ -88,7 +88,7 @@ $conn->close();
 
 	<a href="dashboard.php">
 			<div class="logosec"> 
-				<div class="logo"><img src="../src/logo.png" style="margin-left: -5px;"></div> 
+				<div class="logo"><img src="../src/logo2Final.png"></div> 
 			</div> 
 		</a>
 
@@ -111,63 +111,38 @@ $conn->close();
 			<nav class="nav"> 
 				<div class="nav-upper-options"> 
 
-					<a href="dashboard.php" style="color: black; text-decoration: none;">
+					<a href="dashboard.php" style="color: white; text-decoration: none;">
 					<div class="nav-option option1"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
-							class="nav-img"
-							alt="dashboard"> 
 						<h3> Dashboard</h3> 
 					</div> </a>
 
 					<div class="option2 nav-option"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png"
-							class="nav-img"
-							alt="articles"> 
-						<h3>Forum</h3> 
+						<h3 style="color: white;">Forum</h3> 
 					</div> 
 
-				<a href="forumpost.php" style="color: black; text-decoration: none;">
+				<a href="forumpost.php" style="color: white; text-decoration: none;">
 					<div class="nav-option option3"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png"
-							class="nav-img"
-							alt="report"> 
 						<h3>Forum Posts</h3> 
 					</div> </a>
 
-					<a href="user.php" style="color: black; text-decoration: none;">
+					<a href="user.php" style="color: white; text-decoration: none;">
 					<div class="nav-option option4"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
-							class="nav-img"
-							alt="institution"> 
 						<h3>Users</h3> 
 					</div> 
 				</a>
 
-				<a href="profile.php" style="color: black; text-decoration: none;">
+				<a href="profile.php" style="color: white; text-decoration: none;">
 					<div class="nav-option option5"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
-							class="nav-img"
-							alt="blog"> 
 						<h3> Profile</h3> 
 					</div> </a>
 
-					<a href="admin.php" style="color: black; text-decoration: none;">
+					<a href="admin.php" style="color: white; text-decoration: none;">
 					<div class="nav-option option6"> 
-						<img src= 
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png"
-							class="nav-img"
-							alt="report"> 
 						<h3>Admin</h3> 
 					</div> </a>
 
-					<a href="#" onclick="confirmLogout()" style="color: black; text-decoration: none;">
+					<a href="#" onclick="confirmLogout()" style="color: white; text-decoration: none;">
 						<div class="nav-option logout"> 
-							<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img" alt="logout"> 
 							<h3>Logout</h3> 
 						</div>
 					</a>
