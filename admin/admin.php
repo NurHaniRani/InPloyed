@@ -61,7 +61,7 @@ if ($resultUserImage->num_rows == 1) {
 				initial-scale=1.0"> 
 	<title>Admin | CareerConnect</title> 
 	<link rel="stylesheet"
-		href="../css/admin2.css"> 
+		href="../css/admin.css"> 
 	<link rel="stylesheet"
 		href="responsive.css"> 
 </head> 
